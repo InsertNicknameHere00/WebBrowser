@@ -9,3 +9,4 @@ C:\Users\Rosen\source\repos\WebBrowser\WebBrowser\obj\Debug\WebBrowser.exe
 C:\Users\Rosen\source\repos\WebBrowser\WebBrowser\obj\Debug\WebBrowser.pdb
 C:\Users\Rosen\source\repos\WebBrowser\WebBrowser\obj\Debug\WebBrowser.Login.resources
 C:\Users\Rosen\source\repos\WebBrowser\WebBrowser\obj\Debug\WebBrowser.Register.resources
+C:\Users\Rosen\source\repos\WebBrowser\WebBrowser\obj\Debug\WebBrowser.csproj.AssemblyReference.cache

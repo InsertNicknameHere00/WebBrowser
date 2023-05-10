@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace WebBrowser
 {
@@ -42,7 +43,7 @@ namespace WebBrowser
 
         private void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-
+            tabControl1.SelectedTab.Text = Browser.DocumentTitle;
         }
 
         private void ReverseButton_Click(object sender, EventArgs e)
@@ -75,24 +76,47 @@ namespace WebBrowser
 
         private void GoHomeButton_Click(object sender, EventArgs e)
         {
-            Browser.GoHome();
+            if (SearchEngineBox.Text == "Bing")
+            {
+                Browser.Navigate("www.bing.com");
+            }
+            if (SearchEngineBox.Text == "Google")
+            {
+                Browser.Navigate("www.google.com");
+            }
         }
 
         private void WebBrowser_Load(object sender, EventArgs e)
         {
-            Browser.GoHome();
+            if (SearchEngineBox.Text == "Bing")
+            {
+                Browser.Navigate("www.bing.com");
+            }
+            if (SearchEngineBox.Text == "Google")
+            {
+                Browser.Navigate("www.google.com");
+            }
+            tabPage.Text = Browser.DocumentTitle;
             Browser.DocumentCompleted += Browser_DocumentCompleted;
         }
 
         private void AddTabButton_Click(object sender, EventArgs e)
         {
             TabPage tab = new TabPage();
-            tab.Text = "New Tab";
+            tab.Text = Browser.DocumentTitle;
             tabControl1.Controls.Add(tab);
             tabControl1.SelectTab(tabControl1.TabCount - 1);
+            Browser = new System.Windows.Forms.WebBrowser() { ScriptErrorsSuppressed = true };
             Browser.Parent = tab;
             Browser.Dock = DockStyle.Fill;
-            Browser.Navigate("https://www.google.com");
+            if (SearchEngineBox.Text == "Bing")
+            {
+                Browser.Navigate("www.bing.com");
+            }
+            if (SearchEngineBox.Text == "Google")
+            {
+                Browser.Navigate("www.google.com");
+            }
             Browser.DocumentCompleted += Browser_DocumentCompleted;
         }
 
@@ -110,10 +134,10 @@ namespace WebBrowser
         private void SaveBookmarksButton_Click(object sender, EventArgs e)
         {
             string filename = NicknameBox.Text;
-            string path = ("C:\\Users\\Rosen\\source\repos\\WebBrowser\\" + filename + ".txt");
+            string path = ("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
             if (File.Exists(path))
             {
-                StreamWriter sw = File.AppendText("C:\\Users\\Rosen\\source\repos\\WebBrowser\\" + filename + "_bookmarks.txt");
+                StreamWriter sw = File.AppendText("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + "_bookmarks.txt");
                 try
                 {
                     sw.WriteLine(Browser.Url);
@@ -137,13 +161,14 @@ namespace WebBrowser
         private void LoadBookmarksButton_Click(object sender, EventArgs e)
         {
             string filename = NicknameBox.Text;
-            string path = ("C:\\Users\\Rosen\\source\repos\\WebBrowser\\" + filename + ".txt");
+            string path = ("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
             if (File.Exists(path))
             {
-                StreamReader sr = new StreamReader("C:\\Users\\Rosen\\source\repos\\WebBrowser\\" + filename + "_bookmarks.txt");
+                StreamReader sr = new StreamReader("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + "_bookmarks.txt");
                 try
                 {
-                    BookmarksBox.Text =;
+                    string fileContents = sr.ReadToEnd();
+                    BookmarksBox.Text = fileContents;
                 }
                 catch (Exception ex)
                 {
@@ -159,6 +184,10 @@ namespace WebBrowser
                 MessageBox.Show("Missing Profile!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BookmarksBox_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Browser.Navigate(BookmarksBox.SelectedText);
+        }
     }
     }
-}

@@ -27,8 +27,8 @@ namespace WebBrowser
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            string filename = NameBox.Text;
-            StreamWriter sw =File.AppendText("C:\\Users\\Rosen\\source\repos\\WebBrowser\\" + filename + ".txt");
+            string filename = NicknameBox.Text;
+            StreamWriter sw =File.AppendText("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
             try
             {
                 sw.WriteLine(NicknameBox.Text);

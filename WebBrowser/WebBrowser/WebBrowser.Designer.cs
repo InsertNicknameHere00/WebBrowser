@@ -43,14 +43,14 @@ namespace WebBrowser
             this.RemoveTabButton = new System.Windows.Forms.ToolStripMenuItem();
             this.GoHomeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.RegisterButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.SearchEngineBox = new System.Windows.Forms.ToolStripComboBox();
             this.BookmarkButton = new System.Windows.Forms.ToolStripMenuItem();
             this.NicknameBox = new System.Windows.Forms.ToolStripTextBox();
             this.SaveBookmarksButton = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadBookmarksButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchEngineBox = new System.Windows.Forms.ToolStripComboBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage = new System.Windows.Forms.TabPage();
             this.Browser = new System.Windows.Forms.WebBrowser();
             this.BookmarksBox = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -58,7 +58,7 @@ namespace WebBrowser
             this.TopMenu.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopMenu
@@ -123,8 +123,8 @@ namespace WebBrowser
             this.RemoveTabButton,
             this.GoHomeButton,
             this.RegisterButton,
-            this.SearchEngineBox,
-            this.BookmarkButton});
+            this.BookmarkButton,
+            this.SearchEngineBox});
             this.MainMenu.Location = new System.Drawing.Point(0, 33);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(1449, 35);
@@ -188,17 +188,6 @@ namespace WebBrowser
             this.RegisterButton.Text = "👤";
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
-            // SearchEngineBox
-            // 
-            this.SearchEngineBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.SearchEngineBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SearchEngineBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchEngineBox.Items.AddRange(new object[] {
-            "Bing",
-            "Google"});
-            this.SearchEngineBox.Name = "SearchEngineBox";
-            this.SearchEngineBox.Size = new System.Drawing.Size(121, 31);
-            // 
             // BookmarkButton
             // 
             this.BookmarkButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -212,22 +201,34 @@ namespace WebBrowser
             // 
             // NicknameBox
             // 
+            this.NicknameBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.NicknameBox.Name = "NicknameBox";
             this.NicknameBox.Size = new System.Drawing.Size(100, 23);
             // 
             // SaveBookmarksButton
             // 
             this.SaveBookmarksButton.Name = "SaveBookmarksButton";
-            this.SaveBookmarksButton.Size = new System.Drawing.Size(180, 30);
+            this.SaveBookmarksButton.Size = new System.Drawing.Size(160, 30);
             this.SaveBookmarksButton.Text = "Save";
             this.SaveBookmarksButton.Click += new System.EventHandler(this.SaveBookmarksButton_Click);
             // 
             // LoadBookmarksButton
             // 
             this.LoadBookmarksButton.Name = "LoadBookmarksButton";
-            this.LoadBookmarksButton.Size = new System.Drawing.Size(180, 30);
+            this.LoadBookmarksButton.Size = new System.Drawing.Size(160, 30);
             this.LoadBookmarksButton.Text = "Load";
             this.LoadBookmarksButton.Click += new System.EventHandler(this.LoadBookmarksButton_Click);
+            // 
+            // SearchEngineBox
+            // 
+            this.SearchEngineBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SearchEngineBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SearchEngineBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchEngineBox.Items.AddRange(new object[] {
+            "Bing",
+            "Google"});
+            this.SearchEngineBox.Name = "SearchEngineBox";
+            this.SearchEngineBox.Size = new System.Drawing.Size(121, 31);
             // 
             // SearchBox
             // 
@@ -236,7 +237,7 @@ namespace WebBrowser
             this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.Location = new System.Drawing.Point(265, 39);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(852, 26);
+            this.SearchBox.Size = new System.Drawing.Size(905, 26);
             this.SearchBox.TabIndex = 2;
             // 
             // tabControl1
@@ -244,23 +245,22 @@ namespace WebBrowser
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage);
             this.tabControl1.Location = new System.Drawing.Point(133, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1316, 703);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // tabPage
             // 
-            this.tabPage1.Controls.Add(this.Browser);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1308, 677);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage.Controls.Add(this.Browser);
+            this.tabPage.Location = new System.Drawing.Point(4, 22);
+            this.tabPage.Name = "tabPage";
+            this.tabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage.Size = new System.Drawing.Size(1308, 677);
+            this.tabPage.TabIndex = 0;
+            this.tabPage.UseVisualStyleBackColor = true;
             // 
             // Browser
             // 
@@ -271,7 +271,7 @@ namespace WebBrowser
             this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
             this.Browser.Name = "Browser";
             this.Browser.ScriptErrorsSuppressed = true;
-            this.Browser.Size = new System.Drawing.Size(1571, 842);
+            this.Browser.Size = new System.Drawing.Size(1575, 836);
             this.Browser.TabIndex = 0;
             this.Browser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.Browser_DocumentCompleted);
             // 
@@ -279,15 +279,16 @@ namespace WebBrowser
             // 
             this.BookmarksBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BookmarksBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BookmarksBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BookmarksBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BookmarksBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookmarksBox.Location = new System.Drawing.Point(0, 71);
+            this.BookmarksBox.Location = new System.Drawing.Point(0, 93);
             this.BookmarksBox.Name = "BookmarksBox";
             this.BookmarksBox.ReadOnly = true;
-            this.BookmarksBox.Size = new System.Drawing.Size(131, 670);
+            this.BookmarksBox.Size = new System.Drawing.Size(131, 648);
             this.BookmarksBox.TabIndex = 4;
             this.BookmarksBox.Text = "";
+            this.BookmarksBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.BookmarksBox_LinkClicked);
             // 
             // openFileDialog1
             // 
@@ -314,7 +315,7 @@ namespace WebBrowser
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,9 +337,7 @@ namespace WebBrowser
         private System.Windows.Forms.ToolStripMenuItem RemoveTabButton;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.RichTextBox BookmarksBox;
-        private System.Windows.Forms.WebBrowser Browser;
         private System.Windows.Forms.ToolStripMenuItem GoHomeButton;
         private System.Windows.Forms.ToolStripMenuItem RegisterButton;
         private System.Windows.Forms.ToolStripComboBox SearchEngineBox;
@@ -348,6 +347,8 @@ namespace WebBrowser
         private System.Windows.Forms.ToolStripMenuItem LoadBookmarksButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TabPage tabPage;
+        private System.Windows.Forms.WebBrowser Browser;
     }
 }
 
