@@ -34,7 +34,7 @@ namespace WebBrowser
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult =  MessageBox.Show("Are you sure you wanna quit?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult =  MessageBox.Show("Are you sure you wanna exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
@@ -44,6 +44,7 @@ namespace WebBrowser
         private void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             tabControl1.SelectedTab.Text = Browser.DocumentTitle;
+            HistoryBox.Text+=(Environment.NewLine + SearchBox.Text + " " + Browser.Url);
         }
 
         private void ReverseButton_Click(object sender, EventArgs e)
@@ -188,6 +189,11 @@ namespace WebBrowser
         private void BookmarksBox_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Browser.Navigate(BookmarksBox.SelectedText);
+        }
+
+        private void HistoryBox_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Browser.Navigate(HistoryBox.SelectedText);
         }
     }
     }

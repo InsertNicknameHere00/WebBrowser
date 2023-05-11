@@ -34,7 +34,6 @@ namespace WebBrowser
                 sw.WriteLine(NicknameBox.Text);
                 sw.WriteLine(NameBox.Text);
                 sw.WriteLine(PasswordBox.Text);
-                sw.WriteLine();
                 this.Close();
             }
             catch (Exception ex)

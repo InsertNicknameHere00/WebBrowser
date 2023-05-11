@@ -44,13 +44,13 @@ namespace WebBrowser
         {
             string filename = NicknameBox.Text;
             StreamReader sr = new StreamReader("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
-            String[]lines=System.IO.File.ReadAllLines("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
+            String[]lines=File.ReadAllLines("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
             String nickname = lines[0];
-            String name = lines[0];
-            String password = lines[0];
+            String name = lines[1];
+            string password = lines[2];
             try
             {
-                if (NicknameBox.Text.Equals(nickname) && NameBox.Text.Equals(nickname) && PasswordBox.Text.Equals(nickname))
+                if (NicknameBox.Text.Equals(nickname) && NameBox.Text.Equals(name) && PasswordBox.Text.Equals(password))
                 {
                     MessageBox.Show("You have logged in!", "Success!");
                     this.Close();

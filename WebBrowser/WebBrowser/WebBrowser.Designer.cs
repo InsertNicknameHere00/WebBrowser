@@ -30,7 +30,6 @@ namespace WebBrowser
         private void InitializeComponent()
         {
             this.TopMenu = new System.Windows.Forms.MenuStrip();
-            this.Bingus = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.MaximizeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.MinimizeButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +54,8 @@ namespace WebBrowser
             this.BookmarksBox = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.HistoryBox = new System.Windows.Forms.RichTextBox();
+            this.Bingus = new System.Windows.Forms.ToolStripTextBox();
             this.TopMenu.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -75,12 +76,6 @@ namespace WebBrowser
             this.TopMenu.Name = "TopMenu";
             this.TopMenu.Size = new System.Drawing.Size(1448, 35);
             this.TopMenu.TabIndex = 0;
-            // 
-            // Bingus
-            // 
-            this.Bingus.Name = "Bingus";
-            this.Bingus.Size = new System.Drawing.Size(188, 31);
-            this.Bingus.Text = "Bingus Explorer🐾";
             // 
             // ExitButton
             // 
@@ -202,6 +197,7 @@ namespace WebBrowser
             // NicknameBox
             // 
             this.NicknameBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.NicknameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NicknameBox.Name = "NicknameBox";
             this.NicknameBox.Size = new System.Drawing.Size(100, 23);
             // 
@@ -246,10 +242,10 @@ namespace WebBrowser
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage);
-            this.tabControl1.Location = new System.Drawing.Point(133, 71);
+            this.tabControl1.Location = new System.Drawing.Point(158, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1316, 703);
+            this.tabControl1.Size = new System.Drawing.Size(1291, 703);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage
@@ -258,7 +254,7 @@ namespace WebBrowser
             this.tabPage.Location = new System.Drawing.Point(4, 22);
             this.tabPage.Name = "tabPage";
             this.tabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage.Size = new System.Drawing.Size(1308, 677);
+            this.tabPage.Size = new System.Drawing.Size(1283, 677);
             this.tabPage.TabIndex = 0;
             this.tabPage.UseVisualStyleBackColor = true;
             // 
@@ -271,7 +267,7 @@ namespace WebBrowser
             this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
             this.Browser.Name = "Browser";
             this.Browser.ScriptErrorsSuppressed = true;
-            this.Browser.Size = new System.Drawing.Size(1575, 836);
+            this.Browser.Size = new System.Drawing.Size(1550, 836);
             this.Browser.TabIndex = 0;
             this.Browser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.Browser_DocumentCompleted);
             // 
@@ -279,13 +275,14 @@ namespace WebBrowser
             // 
             this.BookmarksBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BookmarksBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BookmarksBox.BackColor = System.Drawing.SystemColors.Control;
             this.BookmarksBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BookmarksBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BookmarksBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookmarksBox.Location = new System.Drawing.Point(0, 93);
+            this.BookmarksBox.Location = new System.Drawing.Point(0, 71);
             this.BookmarksBox.Name = "BookmarksBox";
             this.BookmarksBox.ReadOnly = true;
-            this.BookmarksBox.Size = new System.Drawing.Size(131, 648);
+            this.BookmarksBox.Size = new System.Drawing.Size(156, 337);
             this.BookmarksBox.TabIndex = 4;
             this.BookmarksBox.Text = "";
             this.BookmarksBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.BookmarksBox_LinkClicked);
@@ -294,12 +291,40 @@ namespace WebBrowser
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // HistoryBox
+            // 
+            this.HistoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.HistoryBox.BackColor = System.Drawing.SystemColors.Control;
+            this.HistoryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HistoryBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistoryBox.Location = new System.Drawing.Point(0, 410);
+            this.HistoryBox.Name = "HistoryBox";
+            this.HistoryBox.ReadOnly = true;
+            this.HistoryBox.Size = new System.Drawing.Size(156, 307);
+            this.HistoryBox.TabIndex = 5;
+            this.HistoryBox.Text = "";
+            this.HistoryBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.HistoryBox_LinkClicked);
+            // 
+            // Bingus
+            // 
+            this.Bingus.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Bingus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Bingus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bingus.Name = "Bingus";
+            this.Bingus.ReadOnly = true;
+            this.Bingus.Size = new System.Drawing.Size(180, 31);
+            this.Bingus.Text = "Bingus Explorer🐾";
+            this.Bingus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // WebBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1448, 719);
+            this.Controls.Add(this.HistoryBox);
             this.Controls.Add(this.BookmarksBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.SearchBox);
@@ -324,7 +349,6 @@ namespace WebBrowser
         #endregion
 
         private System.Windows.Forms.MenuStrip TopMenu;
-        private System.Windows.Forms.ToolStripMenuItem Bingus;
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem ExitButton;
         private System.Windows.Forms.ToolStripMenuItem MaximizeButton;
@@ -349,6 +373,8 @@ namespace WebBrowser
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TabPage tabPage;
         private System.Windows.Forms.WebBrowser Browser;
+        private System.Windows.Forms.RichTextBox HistoryBox;
+        private System.Windows.Forms.ToolStripTextBox Bingus;
     }
 }
 

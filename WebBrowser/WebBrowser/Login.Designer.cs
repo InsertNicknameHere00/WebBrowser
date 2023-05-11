@@ -59,7 +59,7 @@ namespace WebBrowser
             this.TopMenu.Location = new System.Drawing.Point(0, 0);
             this.TopMenu.Name = "TopMenu";
             this.TopMenu.Size = new System.Drawing.Size(223, 34);
-            this.TopMenu.TabIndex = 1;
+            this.TopMenu.TabIndex = 10;
             // 
             // ExitButton
             // 
@@ -93,7 +93,7 @@ namespace WebBrowser
             this.LoginTitle.Location = new System.Drawing.Point(33, 54);
             this.LoginTitle.Name = "LoginTitle";
             this.LoginTitle.Size = new System.Drawing.Size(85, 31);
-            this.LoginTitle.TabIndex = 2;
+            this.LoginTitle.TabIndex = 1;
             this.LoginTitle.Text = "Login";
             // 
             // NicknameLabel
@@ -104,7 +104,7 @@ namespace WebBrowser
             this.NicknameLabel.Location = new System.Drawing.Point(31, 99);
             this.NicknameLabel.Name = "NicknameLabel";
             this.NicknameLabel.Size = new System.Drawing.Size(87, 20);
-            this.NicknameLabel.TabIndex = 3;
+            this.NicknameLabel.TabIndex = 5;
             this.NicknameLabel.Text = "Nickname";
             // 
             // PasswordLabel
@@ -115,7 +115,7 @@ namespace WebBrowser
             this.PasswordLabel.Location = new System.Drawing.Point(31, 199);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(86, 20);
-            this.PasswordLabel.TabIndex = 4;
+            this.PasswordLabel.TabIndex = 7;
             this.PasswordLabel.Text = "Password";
             // 
             // NicknameBox
@@ -126,7 +126,7 @@ namespace WebBrowser
             this.NicknameBox.Location = new System.Drawing.Point(35, 118);
             this.NicknameBox.Name = "NicknameBox";
             this.NicknameBox.Size = new System.Drawing.Size(149, 26);
-            this.NicknameBox.TabIndex = 5;
+            this.NicknameBox.TabIndex = 2;
             // 
             // PasswordBox
             // 
@@ -136,7 +136,7 @@ namespace WebBrowser
             this.PasswordBox.Location = new System.Drawing.Point(35, 222);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(149, 26);
-            this.PasswordBox.TabIndex = 6;
+            this.PasswordBox.TabIndex = 4;
             // 
             // LoginButton
             // 
@@ -149,7 +149,7 @@ namespace WebBrowser
             this.LoginButton.Location = new System.Drawing.Point(35, 292);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(149, 44);
-            this.LoginButton.TabIndex = 7;
+            this.LoginButton.TabIndex = 9;
             this.LoginButton.Text = "LOGIN";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -157,6 +157,7 @@ namespace WebBrowser
             // RegisterLinkLabel
             // 
             this.RegisterLinkLabel.AutoSize = true;
+            this.RegisterLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegisterLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterLinkLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.RegisterLinkLabel.Location = new System.Drawing.Point(88, 251);
@@ -174,7 +175,7 @@ namespace WebBrowser
             this.NameBox.Location = new System.Drawing.Point(35, 170);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(149, 26);
-            this.NameBox.TabIndex = 10;
+            this.NameBox.TabIndex = 3;
             // 
             // NameLabel
             // 
@@ -184,7 +185,7 @@ namespace WebBrowser
             this.NameLabel.Location = new System.Drawing.Point(31, 147);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(55, 20);
-            this.NameLabel.TabIndex = 9;
+            this.NameLabel.TabIndex = 6;
             this.NameLabel.Text = "Name";
             // 
             // openFileDialog1
@@ -208,7 +209,7 @@ namespace WebBrowser
             this.Controls.Add(this.TopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "History";
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.ResumeLayout(false);
