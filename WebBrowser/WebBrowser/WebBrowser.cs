@@ -99,6 +99,7 @@ namespace WebBrowser
             }
             tabPage.Text = Browser.DocumentTitle;
             Browser.DocumentCompleted += Browser_DocumentCompleted;
+            SearchEngineBox.SelectedIndex =1;
         }
 
         private void AddTabButton_Click(object sender, EventArgs e)
@@ -194,6 +195,26 @@ namespace WebBrowser
         private void HistoryBox_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Browser.Navigate(HistoryBox.SelectedText);
+        }
+
+        private void ClearHistoryButton_Click(object sender, EventArgs e)
+        {
+            HistoryBox.Text = "";
+        }
+
+        private void DeleteBookmarksButton_Click(object sender, EventArgs e)
+        {
+            string filename = NicknameBox.Text;
+            string path = ("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + "_bookmarks.txt");
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+                BookmarksBox.Text = " ";
+            }
+            else
+            {
+                MessageBox.Show("Missing Bookmarks!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     }

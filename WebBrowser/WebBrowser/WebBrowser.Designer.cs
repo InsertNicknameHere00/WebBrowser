@@ -30,6 +30,7 @@ namespace WebBrowser
         private void InitializeComponent()
         {
             this.TopMenu = new System.Windows.Forms.MenuStrip();
+            this.Bingus = new System.Windows.Forms.ToolStripTextBox();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.MaximizeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.MinimizeButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,8 @@ namespace WebBrowser
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.HistoryBox = new System.Windows.Forms.RichTextBox();
-            this.Bingus = new System.Windows.Forms.ToolStripTextBox();
+            this.ClearHistoryButton = new System.Windows.Forms.Button();
+            this.DeleteBookmarksButton = new System.Windows.Forms.Button();
             this.TopMenu.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -76,6 +78,17 @@ namespace WebBrowser
             this.TopMenu.Name = "TopMenu";
             this.TopMenu.Size = new System.Drawing.Size(1448, 35);
             this.TopMenu.TabIndex = 0;
+            // 
+            // Bingus
+            // 
+            this.Bingus.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Bingus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Bingus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bingus.Name = "Bingus";
+            this.Bingus.ReadOnly = true;
+            this.Bingus.Size = new System.Drawing.Size(180, 31);
+            this.Bingus.Text = "Bingus Explorer🐾";
+            this.Bingus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExitButton
             // 
@@ -196,22 +209,23 @@ namespace WebBrowser
             // 
             // NicknameBox
             // 
-            this.NicknameBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.NicknameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NicknameBox.AutoSize = false;
+            this.NicknameBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.NicknameBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NicknameBox.Name = "NicknameBox";
-            this.NicknameBox.Size = new System.Drawing.Size(100, 23);
+            this.NicknameBox.Size = new System.Drawing.Size(105, 25);
             // 
             // SaveBookmarksButton
             // 
             this.SaveBookmarksButton.Name = "SaveBookmarksButton";
-            this.SaveBookmarksButton.Size = new System.Drawing.Size(160, 30);
+            this.SaveBookmarksButton.Size = new System.Drawing.Size(165, 30);
             this.SaveBookmarksButton.Text = "Save";
             this.SaveBookmarksButton.Click += new System.EventHandler(this.SaveBookmarksButton_Click);
             // 
             // LoadBookmarksButton
             // 
             this.LoadBookmarksButton.Name = "LoadBookmarksButton";
-            this.LoadBookmarksButton.Size = new System.Drawing.Size(160, 30);
+            this.LoadBookmarksButton.Size = new System.Drawing.Size(165, 30);
             this.LoadBookmarksButton.Text = "Load";
             this.LoadBookmarksButton.Click += new System.EventHandler(this.LoadBookmarksButton_Click);
             // 
@@ -273,16 +287,14 @@ namespace WebBrowser
             // 
             // BookmarksBox
             // 
-            this.BookmarksBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.BookmarksBox.BackColor = System.Drawing.SystemColors.Control;
             this.BookmarksBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BookmarksBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BookmarksBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookmarksBox.Location = new System.Drawing.Point(0, 71);
+            this.BookmarksBox.Location = new System.Drawing.Point(0, 93);
             this.BookmarksBox.Name = "BookmarksBox";
             this.BookmarksBox.ReadOnly = true;
-            this.BookmarksBox.Size = new System.Drawing.Size(156, 337);
+            this.BookmarksBox.Size = new System.Drawing.Size(156, 307);
             this.BookmarksBox.TabIndex = 4;
             this.BookmarksBox.Text = "";
             this.BookmarksBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.BookmarksBox_LinkClicked);
@@ -299,24 +311,45 @@ namespace WebBrowser
             this.HistoryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HistoryBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistoryBox.Location = new System.Drawing.Point(0, 410);
+            this.HistoryBox.Location = new System.Drawing.Point(0, 430);
             this.HistoryBox.Name = "HistoryBox";
             this.HistoryBox.ReadOnly = true;
-            this.HistoryBox.Size = new System.Drawing.Size(156, 307);
+            this.HistoryBox.Size = new System.Drawing.Size(156, 290);
             this.HistoryBox.TabIndex = 5;
             this.HistoryBox.Text = "";
             this.HistoryBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.HistoryBox_LinkClicked);
             // 
-            // Bingus
+            // ClearHistoryButton
             // 
-            this.Bingus.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Bingus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Bingus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bingus.Name = "Bingus";
-            this.Bingus.ReadOnly = true;
-            this.Bingus.Size = new System.Drawing.Size(180, 31);
-            this.Bingus.Text = "Bingus Explorer🐾";
-            this.Bingus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClearHistoryButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClearHistoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearHistoryButton.FlatAppearance.BorderSize = 0;
+            this.ClearHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearHistoryButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.ClearHistoryButton.Location = new System.Drawing.Point(0, 402);
+            this.ClearHistoryButton.Name = "ClearHistoryButton";
+            this.ClearHistoryButton.Size = new System.Drawing.Size(156, 31);
+            this.ClearHistoryButton.TabIndex = 10;
+            this.ClearHistoryButton.Text = "CLEAR";
+            this.ClearHistoryButton.UseVisualStyleBackColor = false;
+            this.ClearHistoryButton.Click += new System.EventHandler(this.ClearHistoryButton_Click);
+            // 
+            // DeleteBookmarksButton
+            // 
+            this.DeleteBookmarksButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.DeleteBookmarksButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBookmarksButton.FlatAppearance.BorderSize = 0;
+            this.DeleteBookmarksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBookmarksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBookmarksButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.DeleteBookmarksButton.Location = new System.Drawing.Point(0, 65);
+            this.DeleteBookmarksButton.Name = "DeleteBookmarksButton";
+            this.DeleteBookmarksButton.Size = new System.Drawing.Size(156, 31);
+            this.DeleteBookmarksButton.TabIndex = 11;
+            this.DeleteBookmarksButton.Text = "DELETE";
+            this.DeleteBookmarksButton.UseVisualStyleBackColor = false;
+            this.DeleteBookmarksButton.Click += new System.EventHandler(this.DeleteBookmarksButton_Click);
             // 
             // WebBrowser
             // 
@@ -324,6 +357,8 @@ namespace WebBrowser
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1448, 719);
+            this.Controls.Add(this.DeleteBookmarksButton);
+            this.Controls.Add(this.ClearHistoryButton);
             this.Controls.Add(this.HistoryBox);
             this.Controls.Add(this.BookmarksBox);
             this.Controls.Add(this.tabControl1);
@@ -375,6 +410,8 @@ namespace WebBrowser
         private System.Windows.Forms.WebBrowser Browser;
         private System.Windows.Forms.RichTextBox HistoryBox;
         private System.Windows.Forms.ToolStripTextBox Bingus;
+        private System.Windows.Forms.Button ClearHistoryButton;
+        private System.Windows.Forms.Button DeleteBookmarksButton;
     }
 }
 

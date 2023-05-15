@@ -209,7 +209,7 @@ namespace WebBrowser
             this.Controls.Add(this.TopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
-            this.Text = "History";
+            this.Text = "Login";
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.ResumeLayout(false);

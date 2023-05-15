@@ -41,7 +41,7 @@ namespace WebBrowser
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
-        {
+        { 
             string filename = NicknameBox.Text;
             StreamReader sr = new StreamReader("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
             String[]lines=File.ReadAllLines("C:\\Users\\Rosen\\source\\repos\\WebBrowser\\" + filename + ".txt");
